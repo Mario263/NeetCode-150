@@ -6,12 +6,12 @@ from typing import List
 
 class Solution:
     def hasDuplicate(self, nums: List[int])-> bool:
-        seen = set()
-        for i in nums:
-            if i in seen:
-                return True
-            seen.add(i)
-        return False
+        seen = set() # Initialize an empty hash set to store elements we have encountered
+        for i in nums: # Iterate through each number 'i' in the input list 'nums'
+            if i in seen: # Check if the current number 'i' is already in the set
+                return True # If it is, we found a duplicate, so return True
+            seen.add(i) # Add 'i' to the set to track it for future checks
+        return False # If the loop completes without finding duplicates, return False
 
 if __name__ == "__main__":
     # Instantiate the Solution class
