@@ -1,3 +1,4 @@
+from typing import List
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> List[int]:
         seen = {} # creating empty dictionary( a hash map )
