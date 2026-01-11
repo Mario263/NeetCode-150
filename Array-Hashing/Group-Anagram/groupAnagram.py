@@ -16,11 +16,11 @@ from collections import defaultdict
 
 class Solution:
     def validAnagram(self, strs: List[str]) -> List[List[str]]:
-        seen = defaultdict(list)
-        for s in strs:
-            count = [0] * 26
-            for c in s:
-                co = ord(c) - ord("a")
+        seen = defaultdict(list) 
+        for s in strs: # O(n)
+            count = [0] * 26 # O(1)
+            for c in s: # O(n)
+                co = ord(c) - ord("a") 
                 count[co]+=1
             key = tuple(count)
             seen[key].append(s)
