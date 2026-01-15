@@ -1,4 +1,4 @@
-class Solution:
+class SolutionUsingWhile:
     def isPalindrome(self, s: str) -> bool:
         i, j = 0, len(s) - 1
         while i < j:
@@ -17,5 +17,5 @@ class Solution:
     
         return True
 
-if __name__ == "__main__":
-    print(Solution().isPalindrome("poop"))
+# if __name__ == "__main__":
+#     print(SolutionUsingWhile().isPalindrome("poop"))
