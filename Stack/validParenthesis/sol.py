@@ -1,9 +1,20 @@
 class Solution:
-    def validParethesis(slef, s: str)-> bool:
+    def validParethesis(self, s: str)-> bool:
 
         paren = {")":"(","}":"{","]":"["}
-        for i in paren()
-        return 
+        stack = []
+        for i in s:
+            if i in paren:
+                if stack and stack[-1] == paren[i]:
+                    stack.pop()
+                else:
+                    return False
+            else:
+                stack.append(i)
+
+
+        return True if not stack else False
 
 if __name__=="__main__":
-    print(Solution().validParethesis())
+    
+    print(Solution().validParethesis("{[}"))
