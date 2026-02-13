@@ -20,4 +20,4 @@ class Solution:
                 rmax = max(rmax, height[r])
                 res+= rmax - height[r] 
                 
-        return
+        return res
