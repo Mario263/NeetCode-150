@@ -9,4 +9,4 @@ nums = [2,4,6]
 target = 6
 
 print(c1.twoSum(nums, target))
-print(c2.twoSum2(nums, target))
+print(c2.twoSum2(nums, target)
