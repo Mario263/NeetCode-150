@@ -1,37 +1,22 @@
 from typing import List
 
 class Solution:
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
+    def threeSum(self, nums: List[int])-> List[List[int]]:
         nums.sort()
-        res: List[List[int]] = []
-        n = len(nums)
-
-        for i in range(n):
-            # skip duplicate starting values
-            if i > 0 and nums[i] == nums[i - 1]:
+        res = []
+        for i, a in enumerate(nums):
+            if i>0 and a == nums[i-1]:
                 continue
-
-            target = -nums[i]
-            j, k = i + 1, n - 1
-
-            while j < k:
-                curr_sum = nums[j] + nums[k]
-
-                if curr_sum < target:
-                    j += 1
-                elif curr_sum > target:
-                    k -= 1
+            l,r = i+1, len(nums)-1
+            while l<r:
+                sums = a + nums[l] + nums[r]
+                if sums<0:
+                    l+=1
+                elif sums > 0:
+                    r-=1
                 else:
-                    res.append([nums[i], nums[j], nums[k]])
-
-                    # skip duplicates for j
-                    j += 1
-                    while j < k and nums[j] == nums[j - 1]:
-                        j += 1
-
-                    # skip duplicates for k
-                    k -= 1
-                    while j < k and nums[k] == nums[k + 1]:
-                        k -= 1
-
+                    res.append([a, nums[l], nums[r]])
+                    l+=1
+                    while nums[l] == nums[l]-1 and l<r:
+                        l+=1
         return res
