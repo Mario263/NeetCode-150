@@ -6,6 +6,7 @@ class Solution:
         stack = [] # index, temp
         for i, t in enumerate(temperatures):
             while stack and t > stack[-1][0]:
+                print(stack[-1][0])
 
                 stackT, stackInd = stack.pop()
 
