@@ -12,4 +12,4 @@ class Solution:
                 l = m+1
             else:
                 return m
-        retur -1
+        return -1
