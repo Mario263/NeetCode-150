@@ -5,12 +5,13 @@ from typing import List
 # and check if the current element is already in the set. 
 
 class Solution:
-    def hasDuplicate(self, nums: List[int])-> bool:
+    def hasDuplicate(self, nums: List[int])-> bool: # over here bool mean a promise as in the return type, the output 
+        # that we're expecting and in what data type
         seen = set() # Initialize an empty hash set to store elements we have encountered
         for i in nums: # Iterate through each number 'i' in the input list 'nums'
-            if i in seen: # Check if the current number 'i' is already in the set
+            if i in seen: # Check if the current number 'i' is already in the set (variable we created "SEEN")
                 return True # If it is, we found a duplicate, so return True
-            seen.add(i) # Add 'i' to the set to track it for future checks
+            seen.add(i) # Add 'i' to the set to track it for future checks # if not in seen then add it to the set
         return False # If the loop completes without finding duplicates, return False
 
 if __name__ == "__main__":
